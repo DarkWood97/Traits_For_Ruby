@@ -19,7 +19,6 @@ Trait.define :MiOtroTrait, {:my_metho => proc{puts 'Hola'}, :my => proc{puts "de
 
 
 class A
-
   uses MiTrait + MiOtroTrait
 end
 
@@ -29,7 +28,10 @@ puts A.const_get :Strategy
 
 puts A.new.methods.to_s
 
-A.new.my
+hash = {[1,2] => 1}
+
+puts hash.to_s
+
 
 
 

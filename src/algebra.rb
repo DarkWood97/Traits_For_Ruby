@@ -1,9 +1,10 @@
 module Algebra
+  include Strategy
   def +(a_trait)
     new_trait = Module.new
     my_methods = const_get(:Methods).clone
     its_methods = a_trait.const_get(:Methods).clone
-    new_hash = my_methods.merge(its_methods){|new_value, old_value|
+    new_hash = my_methods.merge(its_methods){ |key, new_value, old_value|
       [new_value, old_value]
     }
     new_trait.const_set :Methods, new_hash
